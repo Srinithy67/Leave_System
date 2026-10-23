@@ -1,24 +1,44 @@
 # Leave Management System
 
-A leave request and approval system built with Camunda 8, Spring Boot, and React(by referring the shared docs.)
+A leave request and approval system built using **Camunda 8, Spring Boot, and React**. The application allows employees to submit and track leave requests, while managers can review and approve or reject applications.
 
-- Camunda 8 (Docker) – workflow engine
-- Spring Boot backend
-- React with Vite – frontend
-- PostgreSQL – database
+## Tech Stack
+- Camunda 8 (Docker) – Workflow engine
+- Spring Boot – Backend
+- React with Vite – Frontend
+- PostgreSQL – Database
 
-## How to run
+## Features
+- Leave application and request tracking
+- Manager approval and rejection
+- Leave balance management
+- BPMN-based approval workflow
 
+## How to Run
+
+### 1. Start Camunda
 ```bash
-# 1. Start Camunda
 cd camunda && docker compose up -d
+```
 
-# 2. Start backend
+### 2. Start Backend
+```bash
 cd backend && mvn spring-boot:run
+```
 
-# 3. Start frontend
+### 3. Start Frontend
+```bash
 cd frontend && npm install && npm run dev
 ```
 
-Frontend → http://localhost:5173  
-Camunda Operate → http://localhost:8080 (demo / demo)
+## Application Links
+- **Frontend:** http://localhost:5173
+- **Backend:** http://localhost:8081
+- **Camunda Operate:** http://localhost:8080/operate
+
+## Workflow
+Leave Request → Validate Leave → Manager Approval → Finalize Request
+
+**BPMN Process ID:** `leave-request`
+
+**BPMN File:** `bpmn/leave-request.bpmn`
